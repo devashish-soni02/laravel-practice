@@ -22,19 +22,23 @@ Route::get('/home', function () {
     $blogs = [
         [
             'title' => 'Devashish',
-            'body' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore aliquam blanditiis sed mollitia pariatur dolorum nesciunt accusamus, esse debitis animi commodi saepe aperiam soluta sit impedit. Est, enim! Natus, beatae?'
+            'body' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore aliquam blanditiis sed mollitia pariatur dolorum nesciunt accusamus, esse debitis animi commodi saepe aperiam soluta sit impedit. Est, enim! Natus, beatae?',
+            'status' => 0
         ],
         [
             'title' => 'Rahul',
-            'body' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore aliquam blanditiis sed mollitia pariatur dolorum nesciunt accusamus, esse debitis animi commodi saepe aperiam soluta sit impedit. Est, enim! Natus, beatae?'
+            'body' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore aliquam blanditiis sed mollitia pariatur dolorum nesciunt accusamus, esse debitis animi commodi saepe aperiam soluta sit impedit. Est, enim! Natus, beatae?',
+            'status'=> 0
         ],
         [
             'title' => 'Vasu',
-            'body' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore aliquam blanditiis sed mollitia pariatur dolorum nesciunt accusamus, esse debitis animi commodi saepe aperiam soluta sit impedit. Est, enim! Natus, beatae?'
+            'body' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore aliquam blanditiis sed mollitia pariatur dolorum nesciunt accusamus, esse debitis animi commodi saepe aperiam soluta sit impedit. Est, enim! Natus, beatae?',
+            'status'=> 1
         ],
         [
             'title' => 'Lucky',
-            'body' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore aliquam blanditiis sed mollitia pariatur dolorum nesciunt accusamus, esse debitis animi commodi saepe aperiam soluta sit impedit. Est, enim! Natus, beatae?'
+            'body' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore aliquam blanditiis sed mollitia pariatur dolorum nesciunt accusamus, esse debitis animi commodi saepe aperiam soluta sit impedit. Est, enim! Natus, beatae?',
+            'status'=> 0
         ]
     ];
     return view('home', compact('blogs'));

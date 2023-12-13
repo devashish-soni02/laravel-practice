@@ -43,26 +43,38 @@
         <section id="for-each-loops">
 
             {{-- ForEach And Start --}}
-            {{-- @foreach ($blogs as $blog)
-                <div class="row mt-5">
-                    <div class="col-md-4">
-                        <div class="card text-start">
-                            <div class="card-body">
-                                <h4 class="card-title">{{ $blog['title'] }}</h4>
-                                <p class="card-text">{{ $blog['body'] }}</p>
+
+            <div class="row mt-5 ml-5">
+                @foreach ($blogs as $blog)
+                    @if ($blog['status'] == 1)
+                        <div class="col-md-4">
+                            <div class="card text-start">
+                                <div class="card-body">
+                                    <h4 class="card-title">{{ $blog['title'] }}</h4>
+                                    <p class="card-text">{{ $blog['body'] }}</p>
+                                </div>
                             </div>
                         </div>
+                    @else
+                        <div class="col-md-4">
+                            <div class="card text-start">
+                                <div class="card-body">
+                                    <h4 class="card-title">{{ $blog['title'] }}</h4>
+                                    <p class="card-text">{{ $blog['body'] }}</p>
+                                    <button type="button" class="btn btn-warning">Pending Status</button>
+                                </div>
+                            </div>
+                        </div>
+                    @endif
+                @endforeach
+            </div>
 
-                    </div>
-
-                </div>
-            @endforeach --}}
             {{-- ForEach And end --}}
 
 
             {{-- for Start --}}
 
-            @for ($i = 0; $i < count($blogs); $i++)
+            {{-- @for ($i = 0; $i < count($blogs); $i++)
                 <div class="row mt-5">
                     <div class="col-md-4">
                         <div class="card text-start">
@@ -75,7 +87,7 @@
                     </div>
 
                 </div>
-            @endfor
+            @endfor --}}
 
 
         </section>
