@@ -18,7 +18,26 @@ Route::get('/', function () {
 });
 
 Route::get('/home', function () {
-    return view('home');
+
+    $blogs = [
+        [
+            'title' => 'Devashish',
+            'body' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore aliquam blanditiis sed mollitia pariatur dolorum nesciunt accusamus, esse debitis animi commodi saepe aperiam soluta sit impedit. Est, enim! Natus, beatae?'
+        ],
+        [
+            'title' => 'Rahul',
+            'body' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore aliquam blanditiis sed mollitia pariatur dolorum nesciunt accusamus, esse debitis animi commodi saepe aperiam soluta sit impedit. Est, enim! Natus, beatae?'
+        ],
+        [
+            'title' => 'Vasu',
+            'body' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore aliquam blanditiis sed mollitia pariatur dolorum nesciunt accusamus, esse debitis animi commodi saepe aperiam soluta sit impedit. Est, enim! Natus, beatae?'
+        ],
+        [
+            'title' => 'Lucky',
+            'body' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore aliquam blanditiis sed mollitia pariatur dolorum nesciunt accusamus, esse debitis animi commodi saepe aperiam soluta sit impedit. Est, enim! Natus, beatae?'
+        ]
+    ];
+    return view('home', compact('blogs'));
 });
 
 Route::get('about', function () {
