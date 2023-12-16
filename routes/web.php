@@ -1,58 +1,56 @@
 <?php
 
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+
+//Main Route
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', function () {
 
-    $blogs = [
-        [
-            'title' => 'Devashish',
-            'body' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore aliquam blanditiis sed mollitia pariatur dolorum nesciunt accusamus, esse debitis animi commodi saepe aperiam soluta sit impedit. Est, enim! Natus, beatae?',
-            'status' => 0
-        ],
-        [
-            'title' => 'Rahul',
-            'body' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore aliquam blanditiis sed mollitia pariatur dolorum nesciunt accusamus, esse debitis animi commodi saepe aperiam soluta sit impedit. Est, enim! Natus, beatae?',
-            'status'=> 0
-        ],
-        [
-            'title' => 'Vasu',
-            'body' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore aliquam blanditiis sed mollitia pariatur dolorum nesciunt accusamus, esse debitis animi commodi saepe aperiam soluta sit impedit. Est, enim! Natus, beatae?',
-            'status'=> 1
-        ],
-        [
-            'title' => 'Lucky',
-            'body' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore aliquam blanditiis sed mollitia pariatur dolorum nesciunt accusamus, esse debitis animi commodi saepe aperiam soluta sit impedit. Est, enim! Natus, beatae?',
-            'status'=> 0
-        ]
-    ];
-    return view('home', compact('blogs'));
+// Basic Route Define Practice
+Route::get('service', function () {
+    return "<h1> Welcome To Service Pages</h1>";
 });
 
+// Home Page Route Show Demo Data In Grid
+
+
+
+// About Page Route
 Route::get('about', function () {
     return view('about');
 })->name('about');
 
-Route::get('service', function () {
-    return view('service');
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/login', [LoginController::class, 'handlelogin'])->name('login.submit');
+// Route Parameters Pasess
+
+Route::get('contact/{id}', function ($id) {
+    return $id;
 });
 
-Route::get('contact', function () {
-    return view('contact');
+
+// Routing Methods Practice
+
+
+/**
+ * GET - Request a resource
+ * POST -Create A New Resource
+ * PUT - Update A Resource
+ * PATCH - Modify A Resource
+ *  DELETE - Delete A Resource
+ */
+
+
+// Fallback Routes
+
+Route::fallback(function () {
+    return "<h1>Route Not Define</h1>";
 });
+
 

@@ -21,7 +21,7 @@
                     </div>
 
                     <div class="carousel-item">
-                        <img src="https://img.freepik.com/free-photo/medium-shot-woman-working-laptop_23-2150323516.jpg?size=626&ext=jpg"
+                        <img src="https://img.freepik.com/free-photo/medium-shot-woman-wo rking-laptop_23-2150323516.jpg?size=626&ext=jpg"
                             class="w-100 d-block" alt="second slide" style="height: 400px; object-fit: cover;" />
                         <div class="carousel-caption d-none d-md-block">
                             <h3>Title</h3>
@@ -43,30 +43,34 @@
         <section id="for-each-loops">
 
             {{-- ForEach And Start --}}
+            <div class="container">
+                <div class="row mt-5">
+                    @foreach ($blogs as $blog)
+                        @if ($blog['status'] == 1)
+                            <div class="col-md-6">
+                                <div class="card mt-5" style="width: 18rem;">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ $blog['title'] }}</h5>
+                                        <p class="card-text">{{ $blog['body'] }}</p>
+                                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                                    </div>
+                                </div>
 
-            <div class="row mt-5 ml-5">
-                @foreach ($blogs as $blog)
-                    @if ($blog['status'] == 1)
-                        <div class="col-md-4">
-                            <div class="card text-start">
-                                <div class="card-body">
-                                    <h4 class="card-title">{{ $blog['title'] }}</h4>
-                                    <p class="card-text">{{ $blog['body'] }}</p>
+                            </div>
+                        @else
+                            <div class="col-md-6">
+                                <div class="card" style="width: 18rem;">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ $blog['title'] }}</h5>
+                                        <p class="card-text">{{ $blog['body'] }}</p>
+                                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    @else
-                        <div class="col-md-4">
-                            <div class="card text-start">
-                                <div class="card-body">
-                                    <h4 class="card-title">{{ $blog['title'] }}</h4>
-                                    <p class="card-text">{{ $blog['body'] }}</p>
-                                    <button type="button" class="btn btn-warning">Pending Status</button>
-                                </div>
-                            </div>
-                        </div>
-                    @endif
-                @endforeach
+                        @endif
+                    @endforeach
+                </div>
+
             </div>
 
             {{-- ForEach And end --}}
